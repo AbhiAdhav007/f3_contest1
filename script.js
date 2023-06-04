@@ -85,7 +85,7 @@ async function getMenu() {
     try {
       await getMenu(); // Fetch and display the menu
       console.log("Menu:",foods)
-      console.log("Note:Go below and click order now to take the order")
+      console.log("Note:Go below and click order now to take the orders")
   
       const orderBtn = document.getElementById("order-btn");
       orderBtn.addEventListener("click", async () => {
