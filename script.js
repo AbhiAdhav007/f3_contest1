@@ -10,9 +10,6 @@ async function getMenu() {
     let result = await response.json();
     
     foods = result;
-    console.log(foods)
-    console.log("Note:Go below and click order now to take the order")
-
     for(let i = 0 ; i < result.length; i++){
 
         let Container = document.getElementsByClassName("container")[0];
@@ -87,6 +84,8 @@ async function getMenu() {
   async function handlePromises() {
     try {
       await getMenu(); // Fetch and display the menu
+      console.log("Menu:",foods)
+      console.log("Note:Go below and click order now to take the order")
   
       const orderBtn = document.getElementById("order-btn");
       orderBtn.addEventListener("click", async () => {
@@ -94,10 +93,10 @@ async function getMenu() {
         console.log("Order:", order);
   
         const orderPrepResult = await orderPrep();
-        console.log("Order Preparation Result:", orderPrepResult);
+        console.log("Order Preparation Status:", orderPrepResult);
   
         const payOrderResult = await payOrder();
-        console.log("Payment Result:", payOrderResult);
+        console.log("Payment Status:", payOrderResult);
   
         thankyouFnc();
       });
