@@ -104,7 +104,7 @@ async function getMenu() {
       console.log("Error:", error);
     }
   }
-  
-  // Call the function to start the process
+  //
+  // Call the function to start the process now
   handlePromises();
   
